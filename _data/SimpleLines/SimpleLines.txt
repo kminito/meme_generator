@@ -3,5 +3,3 @@
 "Line 3" - Author 3
 "Line 4" - Author 4
 "Line 5" - Author 5
-
-

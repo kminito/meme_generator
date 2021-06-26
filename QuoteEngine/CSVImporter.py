@@ -10,8 +10,9 @@ class CSVImporter(IngestorInterface):
     allowed_extensions = ['csv']
 
     @classmethod
-    def parse(cls, path:str):
-        if not cls.can_ingest(cls,path):
+    def parse(cls, path: str):
+        print("CSV Importer")
+        if not cls.can_ingest(cls, path):
             raise Exception('Connot Ingest Exception')
 
         quotes = []

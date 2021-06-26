@@ -45,8 +45,11 @@ if __name__ == "__main__":
     # path - path to an image file
     # body - quote body to add to the image
     # author - quote author to add to the image
-    # args = None #uncomment 
+    # args = None #uncomment
     # print(generate_meme(args.path, args.body, args.author)) #uncomment
 
     # test code
     print(Ingestor.parse('./_data/SimpleLines/SimpleLines.csv'))
+    # print(Ingestor.parse('./_data/SimpleLines/SimpleLines.pdf'))
+    print(Ingestor.parse('./_data/SimpleLines/SimpleLines.docx'))
+    print(Ingestor.parse('./_data/SimpleLines/SimpleLines.txt'))

@@ -10,8 +10,9 @@ class DocxImporter(IngestorInterface):
     allowed_extensions = ['docx']
 
     @classmethod
-    def parse(cls, path:str):
-        if not cls.can_ingest(cls,path):
+    def parse(cls, path: str):
+        print("DocxImporter")
+        if not cls.can_ingest(cls, path):
             raise Exception('Connot Ingest Exception')
 
         quotes = []
@@ -20,8 +21,10 @@ class DocxImporter(IngestorInterface):
 
         for para in doc.paragraphs:
             if para.text != "":
-                parse = para.text.split(',')
-                new_quote = QuoteModel(parse[0], parse[1]) #Need to clarify data type if not str
+                parse = para.text.split('-')
+                body = parse[0].strip().strip('"')
+                author = parse[1].strip()
+                new_quote = QuoteModel(body, author)
                 quotes.append(new_quote)
 
         return quotes
