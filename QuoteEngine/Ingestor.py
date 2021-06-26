@@ -12,8 +12,8 @@ class Ingestor(IngestorInterface):
     @classmethod
     def parse(cls, path) -> List[QuoteModel]:
         for ingestor in cls.ingestors:
-            print(ingestor)
-            print(path)
-            print(ingestor.can_ingest(ingestor,path))
-            # if ingestor.can_ingest(path):
-                # return ingestor.parse(path)
+            # print(ingestor)
+            # print(path)
+            # print(ingestor.can_ingest(ingestor,path))
+            if ingestor.can_ingest(ingestor,path):
+                return ingestor.parse(path)

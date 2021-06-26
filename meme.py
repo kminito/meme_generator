@@ -49,4 +49,4 @@ if __name__ == "__main__":
     # print(generate_meme(args.path, args.body, args.author)) #uncomment
 
     # test code
-    Ingestor.parse('./_data/SimpleLines/SimpleLines.csv')
+    print(Ingestor.parse('./_data/SimpleLines/SimpleLines.csv'))
