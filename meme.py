@@ -1,10 +1,9 @@
 import os
 import random
-
 from QuoteEngine import QuoteModel
 from QuoteEngine import Ingestor
 from MemeEngine import MemeEngine
-
+import argparse
 
 def generate_meme(path=None, body=None, author=None):
     """ Generate a meme given an path and a quote """
@@ -40,17 +39,13 @@ def generate_meme(path=None, body=None, author=None):
     path = meme.make_meme(img, quote.body, quote.author)
     return path
 
-
 if __name__ == "__main__":
-    # @TODO Use ArgumentParser to parse the following CLI arguments
-    # path - path to an image file
-    # body - quote body to add to the image
-    # author - quote author to add to the image
-    args = None
-    # print(generate_meme(args.path, args.body, args.author))
-    generate_meme()
-    # test code
-    # print(Ingestor.parse('./_data/SimpleLines/SimpleLines.csv'))
-    # # print(Ingestor.parse('./_data/SimpleLines/SimpleLines.pdf'))
-    # print(Ingestor.parse('./_data/SimpleLines/SimpleLines.docx'))
-    # print(Ingestor.parse('./_data/SimpleLines/SimpleLines.txt'))
+    parser = argparse.ArgumentParser(description='Generate meme!!')
+    parser.add_argument('--body', type=str, default=None, help="text that want to show")
+    parser.add_argument('--author', type=str, default=None, help="author of the text")
+    parser.add_argument('--path', type=str, default=None, help="file path for background image you want")
+
+    args = parser.parse_args()
+    print(generate_meme(args.path, args.body, args.author))
+
+    # print(Ingestor.parse('./_data/SimpleLines/SimpleLines.pdf'))

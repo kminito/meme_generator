@@ -7,6 +7,7 @@ class MemeEngine:
         self.temp_dir = path
 
     def make_meme(self, img_path, text, author, width=500) -> str:
+        print(img_path)
         out_path = f"{self.temp_dir}/{random.randint(0,1000000)}.jpg"
 
         if width >= 500:
@@ -28,7 +29,7 @@ class MemeEngine:
             draw.text((int(x_loc*1.2), y_loc+font_size), " - "+author, font=font)
 
             img.save(out_path)
-            print(out_path)
+
 
         return out_path
 
