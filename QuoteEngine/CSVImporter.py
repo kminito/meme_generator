@@ -1,3 +1,4 @@
+
 from typing import List
 from .IngestorInterface import IngestorInterface
 from .QuoteModel import QuoteModel
@@ -5,12 +6,13 @@ import pandas
 
 
 class CSVImporter(IngestorInterface):
-    "Helper module to read CSV file and return list of quote models"
+    """Helper module to read CSV file."""
 
     allowed_extensions = ['csv']
 
     @classmethod
     def parse(cls, path: str):
+        """Parse CSV file and list of quote models."""
         print("CSV Importer")
         if not cls.can_ingest(cls, path):
             raise Exception('Connot Ingest Exception')

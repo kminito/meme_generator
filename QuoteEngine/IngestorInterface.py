@@ -6,7 +6,8 @@ from .QuoteModel import QuoteModel
 class IngestorInterface(ABC):
     """
     Abstract base class for actual Ingestr classes for diffent types of files.
-    Each child class will actually ingest the files and return desired data
+
+    Each child class will actually ingest the files and return desired data.
     """
 
     allowed_extensions = []
@@ -18,4 +19,5 @@ class IngestorInterface(ABC):
     @classmethod
     @abstractmethod
     def parse(cls, path: str) -> List[QuoteModel]:
+        """Abstractmetho for parse each type of files."""
         pass

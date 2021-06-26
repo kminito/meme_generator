@@ -7,12 +7,13 @@ import os
 
 
 class PDFImporter(IngestorInterface):
-    "Helper module to read PDF file and return list of quote models"
+    """Helper module to read PDF file."""
 
     allowed_extensions = ['pdf']
 
     @classmethod
     def parse(cls, path: str):
+        """Parse pdf file and list of quote models."""
         if not cls.can_ingest(cls, path):
             raise Exception('Connot Ingest Exception')
 

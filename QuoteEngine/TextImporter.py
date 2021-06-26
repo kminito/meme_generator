@@ -4,12 +4,13 @@ from .QuoteModel import QuoteModel
 
 
 class TextImporter(IngestorInterface):
-    "Helper module to read text file and return list of quote models"
+    """Helper module to read text file."""
 
     allowed_extensions = ['txt']
 
     @classmethod
     def parse(cls, path: str):
+        """Parse txt file and list of quote models."""
         print("TextImporter Executed")
         if not cls.can_ingest(cls, path):
             raise Exception('Connot Ingest Exception')
