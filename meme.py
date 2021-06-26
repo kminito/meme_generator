@@ -1,8 +1,9 @@
 import os
 import random
 
+from QuoteEngine import QuoteModel
 from QuoteEngine import Ingestor
-# @TODO Import your Ingestor and MemeEngine classes
+from MemeEngine import MemeEngine
 
 
 def generate_meme(path=None, body=None, author=None):
@@ -23,7 +24,7 @@ def generate_meme(path=None, body=None, author=None):
     if body is None:
         quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt',
                        './_data/DogQuotes/DogQuotesDOCX.docx',
-                       './_data/DogQuotes/DogQuotesPDF.pdf',
+                    #    './_data/DogQuotes/DogQuotesPDF.pdf',
                        './_data/DogQuotes/DogQuotesCSV.csv']
         quotes = []
         for f in quote_files:
@@ -45,11 +46,11 @@ if __name__ == "__main__":
     # path - path to an image file
     # body - quote body to add to the image
     # author - quote author to add to the image
-    # args = None #uncomment
-    # print(generate_meme(args.path, args.body, args.author)) #uncomment
-
+    args = None
+    # print(generate_meme(args.path, args.body, args.author))
+    generate_meme()
     # test code
-    print(Ingestor.parse('./_data/SimpleLines/SimpleLines.csv'))
-    # print(Ingestor.parse('./_data/SimpleLines/SimpleLines.pdf'))
-    print(Ingestor.parse('./_data/SimpleLines/SimpleLines.docx'))
-    print(Ingestor.parse('./_data/SimpleLines/SimpleLines.txt'))
+    # print(Ingestor.parse('./_data/SimpleLines/SimpleLines.csv'))
+    # # print(Ingestor.parse('./_data/SimpleLines/SimpleLines.pdf'))
+    # print(Ingestor.parse('./_data/SimpleLines/SimpleLines.docx'))
+    # print(Ingestor.parse('./_data/SimpleLines/SimpleLines.txt'))

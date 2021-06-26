@@ -25,8 +25,8 @@ class PDFImporter(IngestorInterface):
         for line in file_ref.readlines():
             line = line.strip('\n\r').strip()
             if len(line) > 0:
-                parsed = line.split(',')
-                new_quote = QuoteModel(parsed[0], parsed[1])
+                parsed = line.split('-')
+                new_quote = QuoteModel(parsed[0].strip().strip('"'), parsed[1].strip())
                 quotes.append(new_quote)
 
         file_ref.close()
