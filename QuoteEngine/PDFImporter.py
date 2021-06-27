@@ -20,9 +20,8 @@ class PDFImporter(IngestorInterface):
         quotes = []
 
         tmp = f'./tmp/{random.randint(0,1000000)}.txt'
-        call = subprocess.call(['pdftotext', path, tmp])
+        call = subprocess.call(['pdftotext','-layout', path, tmp])
         file_ref = open(tmp, "r")
-
         for line in file_ref.readlines():
             line = line.strip('\n\r').strip()
             if len(line) > 0:

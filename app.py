@@ -15,7 +15,7 @@ def setup():
     """Load all resources."""
     quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt',
                    './_data/DogQuotes/DogQuotesDOCX.docx',
-                #    './_data/DogQuotes/DogQuotesPDF.pdf',
+                   './_data/DogQuotes/DogQuotesPDF.pdf',
                    './_data/DogQuotes/DogQuotesCSV.csv']
 
     quotes = []
@@ -71,9 +71,7 @@ def meme_post():
     path = meme.make_meme(tmp, body, author)
 
     os.remove(tmp)
-
     return render_template('meme.html', path=path)
-
 
 if __name__ == "__main__":
     app.run()
