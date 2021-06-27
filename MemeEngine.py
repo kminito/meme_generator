@@ -1,9 +1,12 @@
 from PIL import Image, ImageFont, ImageDraw
 import random
 
+
 class MemeEngine:
+    """Class to generate actual meme file."""
 
     def __init__(self, path):
+        """Initiate meme engine with path where store produced meme files."""
         self.temp_dir = path
 
     def make_meme(self, img_path, text, author, width=500) -> str:
@@ -22,13 +25,12 @@ class MemeEngine:
             draw = ImageDraw.Draw(img)
             font = ImageFont.truetype("arial.ttf", font_size)
 
-            x_loc = random.randint(0,int(img.width/4))
-            y_loc = random.randint(0,int(img.height-font_size*2))
+            x_loc = random.randint(0, int(img.width/4))
+            y_loc = random.randint(0, int(img.height-font_size*2))
 
-            draw.text((x_loc, y_loc), text, font=font, fill=(0,0,0))
+            draw.text((x_loc, y_loc), text, font=font, fill=(0, 0, 0))
             draw.text((int(x_loc*1.2), y_loc+font_size), " - "+author, font=font)
 
             img.save(out_path)
 
         return out_path
-

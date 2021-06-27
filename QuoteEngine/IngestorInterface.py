@@ -1,7 +1,9 @@
+"""Module that declares abstract base class giving interface."""
 from abc import ABC, abstractmethod
 from typing import List
 from .QuoteModel import QuoteModel
-"""Module that declares abstract base class giving interface."""
+
+
 class IngestorInterface(ABC):
     """
     Abstract base class for actual Ingestr classes for diffent types of files.

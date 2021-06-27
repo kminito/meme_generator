@@ -10,7 +10,7 @@ from typing import List
 
 class Ingestor(IngestorInterface):
     """Class encapsulating each impoter modules."""
-    
+
     ingestors = [CSVImporter, DocxImporter, PDFImporter, TextImporter]
 
     @classmethod

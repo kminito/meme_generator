@@ -1,3 +1,5 @@
+"""Module for QuoteModel Class."""
+
 class QuoteModel:
     """Represent models for Quote."""
 

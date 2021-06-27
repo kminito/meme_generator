@@ -5,6 +5,7 @@ from QuoteEngine import Ingestor
 from MemeEngine import MemeEngine
 import argparse
 
+
 def generate_meme(path=None, body=None, author=None):
     """Generate a meme given an path and a quote."""
     img = None
@@ -38,6 +39,7 @@ def generate_meme(path=None, body=None, author=None):
     meme = MemeEngine('./tmp')
     path = meme.make_meme(img, quote.body, quote.author)
     return path
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Generate meme!!')

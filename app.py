@@ -2,12 +2,10 @@ import random
 import os
 import requests
 from flask import Flask, render_template, abort, request
-
 from QuoteEngine import Ingestor
 from MemeEngine import MemeEngine
 
 app = Flask(__name__)
-
 meme = MemeEngine('./static')
 
 
@@ -24,7 +22,7 @@ def setup():
         print(quote_file)
         quotes += Ingestor.parse(quote_file)
         print(Ingestor.parse(quote_file))
-        
+
     images_path = "./_data/photos/dog/"
 
     imgs = []
@@ -56,7 +54,6 @@ def meme_form():
 @app.route('/create', methods=['POST'])
 def meme_post():
     """Create a user defined meme."""
-
     if not request.form["image_url"]:
         return render_template('meme_form.html')
 
@@ -68,8 +65,7 @@ def meme_post():
 
     except:
         print("Bad Image URL")
-        return render_template('meme_form.html')        
-
+        return render_template('meme_form.html')
 
     body = request.form["body"]
     author = request.form["author"]
@@ -77,6 +73,7 @@ def meme_post():
 
     os.remove(tmp)
     return render_template('meme.html', path=path)
+
 
 if __name__ == "__main__":
     app.run()
