@@ -11,5 +11,5 @@ class QuoteModel:
         self.author = author
 
     def __repr__(self):
-        """Return a representation of QuotelModel, which is 'text - author'"""
+        """Return a representation of QuotelModel, which is 'text - author'."""
         return f"{self.body} - {self.author}"

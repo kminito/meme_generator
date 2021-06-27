@@ -4,7 +4,7 @@ from .QuoteModel import QuoteModel
 
 
 class TextImporter(IngestorInterface):
-    """Helper module to read text file."""
+    """Helper class to read text file."""
 
     allowed_extensions = ['txt']
 
