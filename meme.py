@@ -46,4 +46,5 @@ if __name__ == "__main__":
     parser.add_argument('--path', type=str, default=None, help="file path for background image you want")
 
     args = parser.parse_args()
-    print(generate_meme(args.path, args.body, args.author))
+    # Example path : http://scipy-lectures.org/_images/face.png
+    print("Meme generated in at '{}'".format(generate_meme(args.path, args.body, args.author)))

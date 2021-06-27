@@ -12,7 +12,6 @@ class DocxImporter(IngestorInterface):
     @classmethod
     def parse(cls, path: str):
         """Parse Docx file and list of quote models."""
-        print("DocxImporter")
         if not cls.can_ingest(cls, path):
             raise Exception('Connot Ingest Exception')
 

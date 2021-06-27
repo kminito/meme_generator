@@ -11,7 +11,6 @@ class TextImporter(IngestorInterface):
     @classmethod
     def parse(cls, path: str):
         """Parse txt file and list of quote models."""
-        print("TextImporter Executed")
         if not cls.can_ingest(cls, path):
             raise Exception('Connot Ingest Exception')
 
