@@ -1,5 +1,9 @@
+from Exceptions import InvalidFilePath
+from Exceptions import exception
 from PIL import Image, ImageFont, ImageDraw
 import random
+
+import Exceptions
 
 
 class MemeEngine:
@@ -15,22 +19,24 @@ class MemeEngine:
 
         if width >= 500:
             width = 500
+        try:
+            with Image.open(img_path) as img:
+                ratio = img.height / img.width
+                height = width * ratio
+                img = img.resize((int(width), int(height)))
+                font_size = int(img.height/20)
 
-        with Image.open(img_path) as img:
-            ratio = img.height / img.width
-            height = width * ratio
-            img = img.resize((int(width), int(height)))
-            font_size = int(img.height/20)
+                draw = ImageDraw.Draw(img)
+                font = ImageFont.truetype("arial.ttf", font_size)
 
-            draw = ImageDraw.Draw(img)
-            font = ImageFont.truetype("arial.ttf", font_size)
+                x_loc = random.randint(0, int(img.width/4))
+                y_loc = random.randint(0, int(img.height-font_size*2))
 
-            x_loc = random.randint(0, int(img.width/4))
-            y_loc = random.randint(0, int(img.height-font_size*2))
-
-            draw.text((x_loc, y_loc), text, font=font, fill=(0, 0, 0))
-            draw.text((int(x_loc*1.2), y_loc+font_size), " - "+author, font=font)
-
-            img.save(out_path)
+                draw.text((x_loc, y_loc), text, font=font, fill=(0, 0, 0))
+                draw.text((int(x_loc*1.2), y_loc+font_size), " - "+author, font=font)
+                img.save(out_path)
+                
+        except Exception:
+            raise InvalidFilePath("Invalid image path")
 
         return out_path

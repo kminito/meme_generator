@@ -13,6 +13,7 @@ class IngestorInterface(ABC):
 
     allowed_extensions = []
 
+    @classmethod
     def can_ingest(cls, path) -> bool:
         """Check whether path(file) is appliable for each ingester classes."""
         ext = path.split('.')[-1]

@@ -20,5 +20,5 @@ class Ingestor(IngestorInterface):
             # if ingestor.can_ingest(path):
             # ->"TypeError: can_ingest() missing 1 require positional argument: 'path's"
             # need to check why error occus if without ingester as first argument.s
-            if ingestor.can_ingest(ingestor, path):
+            if ingestor.can_ingest(path):
                 return ingestor.parse(path)

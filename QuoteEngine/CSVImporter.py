@@ -13,7 +13,7 @@ class CSVImporter(IngestorInterface):
     @classmethod
     def parse(cls, path: str):
         """Parse CSV file and list of quote models."""
-        if not cls.can_ingest(cls, path):
+        if not cls.can_ingest(path):
             raise Exception('Connot Ingest Exception')
 
         quotes = []
