@@ -61,10 +61,15 @@ def meme_post():
         return render_template('meme_form.html')
 
     image_url = request.form["image_url"]
+    try:
+        r = requests.get(image_url, verify=False)
+        tmp = f'./tmp/{random.randint(0,100000000)}.png'
+        img = open(tmp, 'wb').write(r.content)
 
-    r = requests.get(image_url, verify=False)
-    tmp = f'./tmp/{random.randint(0,100000000)}.png'
-    img = open(tmp, 'wb').write(r.content)
+    except:
+        print("Bad Image URL")
+        return render_template('meme_form.html')        
+
 
     body = request.form["body"]
     author = request.form["author"]
