@@ -8,7 +8,7 @@ class MemeEngine:
 
     def make_meme(self, img_path, text, author, width=500) -> str:
         """Gernerate Meme with given img, text, and author."""
-        out_path = f"{self.temp_dir}/{random.randint(0,1000000)}.jpg"
+        out_path = f"{self.temp_dir}/{random.randint(0,1000000)}.png"
 
         if width >= 500:
             width = 500

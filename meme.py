@@ -47,4 +47,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     # Example path : http://scipy-lectures.org/_images/face.png
-    print("Meme generated in at '{}'".format(generate_meme(args.path, args.body, args.author)))
+    # print("Meme generated in at '{}'".format(generate_meme(args.path, args.body, args.author)))
