@@ -27,7 +27,7 @@ class MemeEngine:
                 font_size = int(img.height/20)
 
                 draw = ImageDraw.Draw(img)
-                font = ImageFont.truetype("arial.ttf", font_size)
+                font = ImageFont.truetype("./_data/arial.ttf", font_size)
 
                 x_loc = random.randint(0, int(img.width/4))
                 y_loc = random.randint(0, int(img.height-font_size*2))
